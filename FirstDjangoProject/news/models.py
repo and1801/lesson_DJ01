@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class News_post(models.Model):
+class New_post(models.Model):
     title = models.CharField('Название новости', max_length=50)
     short_desc = models.CharField('Краткое описание новости', max_length=200)
     text = models.TextField('Новость')

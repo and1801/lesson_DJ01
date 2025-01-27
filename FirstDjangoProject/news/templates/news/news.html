@@ -9,26 +9,35 @@
 
 
 <h1>Новостная страница</h1>
-{% for new in news %}
-    <div>
-        <h3>
-            {{new.title}}
-            <p>
-                {{new.short_desc}}
-            </p>
-            <p>
-                {{new.text}}
-            </p>
-            <p>
-                {{new.pub_date}}
-            </p>
-            <p>
-                {{new.name}}
-            </p>
-        </h3>
+    {% if news %}
+        {% for new in news %}
+            <div class="card">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
 
-    </div>
+                        <h5 class="card-title"> {{new.title}} </h5>
+                            <p class="card-text">
+                                {{new.short_desc}}
+                            </p>
+                            <p class="card-text">
+                                {{new.text}}
+                            </p>
+                            <p class="card-text">
+                                {{new.pub_date}}
+                            </p>
+                            <p class="card-text">
+                                {{new.name}}
+                            </p>
+                            <a href="#" class="btn btn-ptimary">Подробнее</a>
 
-{% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <h4>Новостей нет</h4>
+    {% endif %}
 
 {% endblock %}
